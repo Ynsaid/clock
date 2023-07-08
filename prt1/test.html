@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="tst.css">
+  <title>Document</title>
+  <style>
+    table,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for=""> The Time Now is :</label>
+    <div class="h" id="hrs"></div>
+    <div class="m" id="mnt"></div>
+    <div class="s" id="sc"></div>
+  </div>
+
+  <script>
+    function time() {
+      let tme = new Date();
+      let h = tme.getHours();
+      let m = tme.getMinutes();
+      let s = tme.getSeconds();
+      
+      let hrs = document.getElementById("hrs");
+      hrs.innerHTML = h;
+      let mnt = document.getElementById("mnt");
+      mnt.innerHTML = m;
+      let sc = document.getElementById("sc");
+      sc.innerHTML = s;
+      function sizee(width){
+    if (window.resizeTo(width) == 767){
+      hrs.style.fontSize=14;
+    }
+    }
+ 
+  }
+
+    setInterval(function() {time();}, 1000);
+  </script>
+</body>
+</html>
